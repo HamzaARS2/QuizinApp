@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="com.example.myquizapp.ui.fragments.explore.ExploreFragment"
+        android:label="fragment_explore"
+        tools:layout="@layout/fragment_explore">
+
+        <argument
+            android:name="userData"
+            app:argType="com.example.myquizapp.data.models.User" />
+        <action
+            android:id="@+id/exploreToCategoryQuizzes"
+            app:destination="@id/categoryQuizzesFragment" />
+        <action
+            android:id="@+id/exploreToProfile"
+            app:destination="@id/profileFragment2" />
+        <action
+            android:id="@+id/exploreToQuizSettings"
+            app:destination="@id/settingsQuizFragment" />
+        <action
+            android:id="@+id/exploreToLogin"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/exploreToAppSettings"
+            app:destination="@id/settingsFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/categoryQuizzesFragment"
+        android:name="com.example.myquizapp.ui.fragments.category_quizzes.CategoryQuizzesFragment"
+        android:label="fragment_category_quizzes"
+        tools:layout="@layout/fragment_category_quizzes">
+        <argument
+            android:name="categoryData"
+            app:argType="com.example.myquizapp.data.models.Category" />
+        <action
+            android:id="@+id/categoryToQuizSettings"
+            app:destination="@id/settingsQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.example.myquizapp.ui.fragments.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/profileToLeaderboard"
+            app:destination="@id/leaderboardFragment" />
+        <argument
+            android:name="userData"
+            app:argType="com.example.myquizapp.data.models.User" />
+        <argument
+            android:name="currentUserProfile"
+            android:defaultValue="true"
+            app:argType="boolean" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/quizGameFragment2"
+        android:name="com.example.myquizapp.ui.fragments.quiz.QuizGameFragment"
+        android:label="fragment_quiz_game"
+        tools:layout="@layout/fragment_quiz_game">
+        <action
+            android:id="@+id/quizGameToResult"
+            app:destination="@id/quizResultFragment"
+            app:popUpTo="@id/exploreFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="gameData"
+            app:argType="com.example.myquizapp.data.models.GamePack" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsQuizFragment"
+        android:name="com.example.myquizapp.ui.fragments.quiz_settings.QuizSettingsFragment"
+        android:label="SettingsQuizFragment"
+        tools:layout="@layout/fragment_settings_quiz">
+        <argument
+            android:name="quizId"
+            app:argType="string" />
+        <action
+            android:id="@+id/quizSettingsToQuizGame"
+            app:destination="@id/quizGameFragment2" />
+        <argument
+            android:name="categoryId"
+            android:defaultValue='""'
+            app:argType="string" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/quizResultFragment"
+        android:name="com.example.myquizapp.ui.fragments.quiz_result.QuizResultFragment"
+        android:label="quiz_result_fragment"
+        tools:layout="@layout/quiz_result_fragment">
+        <action
+            android:id="@+id/quizResultToExplore"
+            app:destination="@id/exploreFragment"
+            app:popUpTo="@id/exploreFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="userData"
+            app:argType="com.example.myquizapp.data.models.User" />
+        <argument
+            android:name="userQuizData"
+            app:argType="com.example.myquizapp.data.models.UserQuizInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/leaderboardFragment"
+        android:name="com.example.myquizapp.ui.fragments.leaderboard.LeaderboardFragment"
+        android:label="leaderboard_fragment"
+        tools:layout="@layout/leaderboard_fragment">
+        <action
+            android:id="@+id/leaderboardToProfile"
+            app:destination="@id/profileFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.myquizapp.ui.fragments.registration.RegisterFragment"
+        android:label="register_fragment"
+        tools:layout="@layout/register_fragment">
+        <action
+            android:id="@+id/registerToAvatars"
+            app:destination="@id/avatarsFragment"
+            app:popUpTo="@id/avatarsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/registerToLogin"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.myquizapp.ui.fragments.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/loginToExplore"
+            app:destination="@id/exploreFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/loginToRegister"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/avatarsFragment"
+        android:name="com.example.myquizapp.ui.fragments.avatars.AvatarsFragment"
+        android:label="avatars_fragment"
+        tools:layout="@layout/avatars_fragment">
+        <action
+            android:id="@+id/avatarsToExplore"
+            app:destination="@id/exploreFragment"
+            app:popUpTo="@id/exploreFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="userData"
+            app:argType="com.example.myquizapp.data.models.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.myquizapp.ui.fragments.app_settings.SettingsFragment"
+        android:label="settings_fragment"
+        tools:layout="@layout/settings_fragment">
+        <argument
+            android:name="userData"
+            app:argType="com.example.myquizapp.data.models.User" />
+        <action
+            android:id="@+id/appSettingsToRegister"
+            app:destination="@id/registerFragment"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/appSettingsToAvatars"
+            app:destination="@id/avatarsFragment" />
+    </fragment>
+
+
+</navigation>

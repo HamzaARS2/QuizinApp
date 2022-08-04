@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="explore_shape_radius">20dp</dimen>
+    <dimen name="titles_sp">22sp</dimen>
+    <dimen name="content_sp">14sp</dimen>
+    <dimen name="quiz_settings_titles">11sp</dimen>
+    <dimen name="congratulation_size">40sp</dimen>
+
+</resources>

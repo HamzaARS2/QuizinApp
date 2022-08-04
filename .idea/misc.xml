@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Quizin_v1 Pack/Extracted files/QuizinApp/app/src/main/res/layout/leaderboard_fragment.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable-h600dp/quiz_answer_selected_shape.xml" value="0.327" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable-h600dp/quiz_answer_shape.xml" value="0.327" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable-sw320dp-h420dp/quiz_answer_shape.xml" value="0.327" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable-sw320dp-h600dp/quiz_answer_selected_shape.xml" value="0.327" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable-sw320dp-h600dp/quiz_answer_shape.xml" value="0.327" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable/card_ripple.xml" value="0.242" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable/category_details_bg.xml" value="0.285" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable/circular_progress_lvl.xml" value="0.1" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable/explore_bg_shape.xml" value="0.238" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable/ic_check.xml" value="0.1375" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable/leaderboard_shape.xml" value="0.1795" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable/profile_details__shape.xml" value="0.2345" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable/quiz_answer_selected_shape.xml" value="0.22" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable/quiz_answer_selector.xml" value="0.1375" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable/quiz_answer_shape.xml" value="0.2295" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/drawable/single_player_unchecked_shape.xml" value="0.142" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/font/acme.xml" value="0.32535271483539974" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/font/fredoka_one.xml" value="0.22706209453197404" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h240dp/register_fragment.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h320dp/fragment_quiz.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h420dp/fragment_profile.xml" value="1.1375" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h420dp/fragment_quiz_game.xml" value="0.1866137266023823" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h420dp/fragment_settings_quiz.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h420dp/leaderboard_fragment.xml" value="0.2867647058823529" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h420dp/leaderboard_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h420dp/register_fragment.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h480dp/fragment_quiz_game.xml" value="0.33" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h480dp/loading_dialog_layout.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h600dp/fragment_profile.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h600dp/fragment_quiz_game.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h600dp/fragment_settings_quiz.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h600dp/leaderboard_fragment.xml" value="0.29717180244829045" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h600dp/register_fragment.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-h640dp/fragment_quiz_game.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-large/fragment_quiz.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-mdpi/fragment_explore.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-normal/fragment_quiz.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-small/fragment_quiz.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h420dp/category_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h420dp/fragment_category_quizzes.xml" value="0.67" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h420dp/fragment_explore.xml" value="0.22" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h420dp/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h420dp/fragment_quiz_game.xml" value="1.1" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h420dp/fragment_quiz_settings.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h420dp/fragment_settings_quiz.xml" value="0.75" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h420dp/leaderboard_fragment.xml" value="1.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h420dp/login_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h420dp/quiz_item.xml" value="1.0" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h420dp/quiz_result_fragment.xml" value="1.1" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h420dp/quiz_time_item.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h420dp/register_fragment.xml" value="0.75" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h420dp/victory_fragment.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h480dp/fragment_quiz_game.xml" value="0.1" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h600dp/fragment_category_quizzes.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h600dp/fragment_explore.xml" value="0.27692307692307694" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h600dp/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h600dp/fragment_quiz_game.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h600dp/fragment_quiz_settings.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h600dp/fragment_settings_quiz.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h600dp/leaderboard_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h600dp/login_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h600dp/quiz_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h600dp/quiz_result_fragment.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h600dp/register_fragment.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp-h600dp/victory_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw320dp/fragment_quiz.xml" value="0.33" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw360dp-h640dp/fragment_quiz.xml" value="0.29717180244829045" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-sw360dp/fragment_quiz.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-w360dp-h640dp/fragment_quiz.xml" value="0.3314814814814815" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-w600dp/fragment_quiz_game.xml" value="0.31124412141941" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout-xxxhdpi/fragment_explore.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/activity_main.xml" value="0.25977859778597784" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/avatar_item.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/avatars_fragment.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/categories_section.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/category_item.xml" value="0.24003707136237257" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/category_quiz_item.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/fragment_category_quizzes.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/fragment_explore.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/fragment_profile.xml" value="0.29717180244829045" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/fragment_quiz.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/fragment_quiz_game.xml" value="0.29717180244829045" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/fragment_quiz_settings.xml" value="0.33" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/fragment_register.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/fragment_settings_quiz.xml" value="0.2" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/latest_quiz_item.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/leaderboard_fragment.xml" value="0.29717180244829045" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/leaderboard_item.xml" value="0.33" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/loading_dialog_layout.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/login_fragment.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/lottie_dialog.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/most_popular_quiz_item.xml" value="0.33" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/multi_player_item.xml" value="0.30055579307396324" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/multi_player_layout.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/popular_quiz_item.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/popular_quizzes_layout.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/popular_quizzes_section.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/profile_full_details_layout.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/profile_layout.xml" value="0.33" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/profile_points_details.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/quiz_difficulty_item.xml" value="0.75" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/quiz_item.xml" value="0.33" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/quiz_result_fragment.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/quiz_time_15s_item.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/quiz_time_30s_item.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/quiz_time_item.xml" value="0.22" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/register_fragment.xml" value="0.22" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/settings_fragment.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/settings_icon_layout.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/settings_test.xml" value="0.33" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/sign_in_layout.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/sign_out_icon_layout.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/single_player_item.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/single_player_layout.xml" value="0.1" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/splash_screen_fragment.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/test.xml" value="0.3625" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/test1.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/unnamed_item.xml" value="0.2965708989805375" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/vectory_dialog.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/victory_dialog.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/layout/victory_fragment.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.308" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/QuizinApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.308" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
+  </component>
+</project>
