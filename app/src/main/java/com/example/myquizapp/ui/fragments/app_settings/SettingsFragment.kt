@@ -1,6 +1,7 @@
 package com.example.myquizapp.ui.fragments.app_settings
 
 import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import com.example.myquizapp.data.models.User
 import com.example.myquizapp.databinding.SettingsFragmentBinding
 import com.example.myquizapp.listeners.SuccessListener
 import com.example.myquizapp.listeners.UpdateUserListener
+import com.example.myquizapp.ui.fragments.explore.ExploreFragmentDirections
 import com.example.myquizapp.utils.LoadingDialog
 
 class SettingsFragment : Fragment(), SuccessListener, UpdateUserListener {
@@ -71,13 +73,27 @@ class SettingsFragment : Fragment(), SuccessListener, UpdateUserListener {
 
         binding.appSettingsDeleteAccountBtn.setOnClickListener {
             // Deleting User Account!
-            showDeleteAccountDialog()
+            showDialog(true,"Are you sure you want to delete your account ?") {dialog ->
+                viewModel.deleteUserAccount(user.id, this)
+                loading.createLoadingDialog()
+                dialog.dismiss()
+            }
         }
 
         binding.appSettingsEditAvatarCv.setOnClickListener {
             Navigation
                 .findNavController(requireView())
                 .navigate(SettingsFragmentDirections.appSettingsToAvatars(user))
+        }
+
+        binding.appSettingsLogOutBtn.setOnClickListener {
+            showDialog(true, "Are you sure you want to sign out ?") { dialog ->
+                viewModel.signOutCurrentUser()
+                Navigation
+                    .findNavController(requireView())
+                    .navigate(SettingsFragmentDirections.appSettingsToLogin())
+                dialog.dismiss()
+            }
         }
     }
 
@@ -97,14 +113,12 @@ class SettingsFragment : Fragment(), SuccessListener, UpdateUserListener {
         }
     }
 
-    private fun showDeleteAccountDialog() {
+    private fun showDialog(cancelable: Boolean, message: String ,setPositiveBtn: (dialog: DialogInterface) -> Unit) {
         val dialog = AlertDialog.Builder(requireContext())
-            .setCancelable(true)
-            .setMessage("Are you sure you want to delete your account ?")
+            .setCancelable(cancelable)
+            .setMessage(message)
             .setPositiveButton(R.string.yes) { dialog, _ ->
-                viewModel.deleteUserAccount(user.id, this)
-                loading.createLoadingDialog()
-                dialog.dismiss()
+               setPositiveBtn(dialog)
             }
             .setNegativeButton(R.string.no) { dialog, _ ->
                 dialog.dismiss()

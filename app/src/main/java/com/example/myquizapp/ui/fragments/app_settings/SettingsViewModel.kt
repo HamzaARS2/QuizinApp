@@ -8,7 +8,8 @@ import com.example.myquizapp.listeners.UpdateUserListener
 import com.example.myquizapp.utils.UserValidation
 
 class SettingsViewModel(
-    private val authRepository: AuthRepository = AuthRepository()
+    private val authRepository: AuthRepository = AuthRepository(),
+
 ) : ViewModel() {
 
     fun updateUser(user: User, mListener:UpdateUserListener) {
@@ -21,5 +22,9 @@ class SettingsViewModel(
 
     fun validateUpdatedUserInfo(username:String,email:String) : UserValidation.UpdateUserResponse {
         return UserValidation().updateUserValidation(username, email)
+    }
+
+    fun signOutCurrentUser() {
+        authRepository.signOut()
     }
 }

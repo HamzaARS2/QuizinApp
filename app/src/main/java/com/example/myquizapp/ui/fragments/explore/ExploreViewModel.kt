@@ -22,9 +22,7 @@ open class ExploreViewModel(
         mutableUserData.postValue(user)
     }
 
-    fun signOutCurrentUser() {
-        authRepo.signOut()
-    }
+
 
 
     fun getCategories(mListener: CategoriesListener) {

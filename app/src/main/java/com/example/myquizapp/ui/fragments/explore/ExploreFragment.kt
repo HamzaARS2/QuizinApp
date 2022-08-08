@@ -189,9 +189,6 @@ class ExploreFragment : Fragment(), View.OnClickListener, CategoriesListener,
 
     override fun onClick(view: View?) {
         when (view?.id) {
-            R.id.sign_out_icon_include -> {
-                createSignOutDialog()
-            }
             R.id.profile_info_cv -> {
                 Navigation
                     .findNavController(view)
@@ -214,23 +211,7 @@ class ExploreFragment : Fragment(), View.OnClickListener, CategoriesListener,
         }
     }
 
-    private fun createSignOutDialog() {
-        val dialog = AlertDialog.Builder(requireContext())
-            .setCancelable(true)
-            .setMessage("Are you sure you want to sign out ?")
-            .setPositiveButton(R.string.yes) { dialog, _ ->
-                viewModel.signOutCurrentUser()
-                Navigation
-                    .findNavController(requireView())
-                    .navigate(ExploreFragmentDirections.exploreToLogin())
-                dialog.dismiss()
-            }
-            .setNegativeButton(R.string.no) { dialog, _ ->
-                dialog.dismiss()
-            }
-            .create()
-        dialog.show()
-    }
+
 
     // Getting Available Categories
     override fun onRetrievingCategoriesCompleted(categories: ArrayList<Category>) {

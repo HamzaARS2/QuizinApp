@@ -23,11 +23,7 @@
         <action
             android:id="@+id/exploreToQuizSettings"
             app:destination="@id/settingsQuizFragment" />
-        <action
-            android:id="@+id/exploreToLogin"
-            app:destination="@id/loginFragment"
-            app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true" />
+
         <action
             android:id="@+id/exploreToAppSettings"
             app:destination="@id/settingsFragment" />
@@ -179,6 +175,11 @@
         <action
             android:id="@+id/appSettingsToAvatars"
             app:destination="@id/avatarsFragment" />
+        <action
+            android:id="@+id/appSettingsToLogin"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/exploreFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
 
