@@ -27,6 +27,9 @@
         <action
             android:id="@+id/exploreToAppSettings"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/exploreToShop"
+            app:destination="@id/shopFragment" />
 
 
     </fragment>
@@ -181,6 +184,11 @@
             app:popUpTo="@id/exploreFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.example.myquizapp.ui.fragments.shop.ShopFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_shop" />
 
 
 </navigation>

@@ -51,5 +51,14 @@
 
     </style>
 
+    <style name="ToolbarTitleStyle" parent="TextAppearance.Material3.ActionBar.Title" >
+        <item name="fontFamily">@font/fredoka_one</item>
+    </style>
+
+    <style name="tabTextStyle" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/fredoka_medium</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+    </style>
+
 
 </resources>

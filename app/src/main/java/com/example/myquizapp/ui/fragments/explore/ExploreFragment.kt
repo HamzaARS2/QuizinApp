@@ -80,10 +80,14 @@ class ExploreFragment : Fragment(), View.OnClickListener, CategoriesListener,
         binding.exploreGoUpBtn.setOnClickListener(this)
 
         //binding.signOutIconInclude.signOutIconLayout.setOnClickListener(this)
-        binding.profileInfoCv.setOnClickListener(this)
-        binding.exploreToolbarUserInfoCv.setOnClickListener(this)
-        binding.settingsIconInclude.settingsIconLayout.setOnClickListener(this)
-        binding.exploreCollapsingTb.setContentScrimColor(Color.parseColor("#241c5c"))
+        binding.apply {
+            profileInfoCv.setOnClickListener(this@ExploreFragment)
+            exploreToolbarUserInfoCv.setOnClickListener(this@ExploreFragment)
+            settingsIconInclude.settingsIconLayout.setOnClickListener(this@ExploreFragment)
+            shopIconInclude.shopIconLayout.setOnClickListener(this@ExploreFragment)
+            exploreCollapsingTb.setContentScrimColor(Color.parseColor("#241c5c"))
+        }
+
 
 
     }
@@ -206,6 +210,11 @@ class ExploreFragment : Fragment(), View.OnClickListener, CategoriesListener,
                 Navigation
                     .findNavController(view)
                     .navigate(ExploreFragmentDirections.exploreToAppSettings(currentUser))
+            }
+            R.id.shop_icon_include -> {
+                Navigation
+                    .findNavController(view)
+                    .navigate(ExploreFragmentDirections.exploreToShop())
             }
 
         }

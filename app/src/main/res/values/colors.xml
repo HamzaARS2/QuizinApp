@@ -69,4 +69,6 @@
     <color name="bad_result">#FF1744</color>
     <color name="dark_purple">#0A0D27</color>
     <color name="leaderboard_item_bg_color">#99FFFFFF</color>
+
+    <color name="shop_main_color">#3F1585</color>
 </resources>
