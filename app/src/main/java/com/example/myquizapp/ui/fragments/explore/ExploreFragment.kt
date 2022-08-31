@@ -79,7 +79,7 @@ class ExploreFragment : Fragment(), View.OnClickListener, CategoriesListener,
 
         binding.exploreGoUpBtn.setOnClickListener(this)
 
-        binding.signOutIconInclude.signOutIconLayout.setOnClickListener(this)
+        //binding.signOutIconInclude.signOutIconLayout.setOnClickListener(this)
         binding.profileInfoCv.setOnClickListener(this)
         binding.exploreToolbarUserInfoCv.setOnClickListener(this)
         binding.settingsIconInclude.settingsIconLayout.setOnClickListener(this)
@@ -108,9 +108,9 @@ class ExploreFragment : Fragment(), View.OnClickListener, CategoriesListener,
         binding.apply {
             exploreToolbarUserName.text = user.username
             exploreToolbarUserBadge.text = "Lv.${user.level}  ${user.badge}"
-            exploreToolbarUserCorrects.text = getConvertedValue(user.correct)
-            exploreToolbarUserTrophies.text = getConvertedValue(user.trophies)
-            exploreToolbarUserWrongs.text = getConvertedValue(user.wrong)
+//            exploreToolbarUserCorrects.text = getConvertedValue(user.correct)
+//            exploreToolbarUserTrophies.text = getConvertedValue(user.trophies)
+//            exploreToolbarUserWrongs.text = getConvertedValue(user.wrong)
             Glide.with(requireView()).load(user.avatar).placeholder(R.drawable.avatar_placeholder)
                 .into(binding.exploreToolbarUserImage)
         }

@@ -19,6 +19,8 @@ import com.example.myquizapp.listeners.SuccessListener
 import com.example.myquizapp.listeners.UpdateUserListener
 import com.example.myquizapp.ui.fragments.explore.ExploreFragmentDirections
 import com.example.myquizapp.utils.LoadingDialog
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class SettingsFragment : Fragment(), SuccessListener, UpdateUserListener {
 
@@ -58,6 +60,7 @@ class SettingsFragment : Fragment(), SuccessListener, UpdateUserListener {
             val updatedUsername = binding.appSettingsUsernameEdt.text.toString().trim()
             val updatedEmail = binding.appSettingsEmailEdt.text.toString().trim()
             val response = viewModel.validateUpdatedUserInfo(updatedUsername, updatedEmail)
+            
 
             if (!response.isValidEmail or !response.isValidUsername) {
                 binding.appSettingsEmailInputLayout.error = response.emailMessage
