@@ -13,8 +13,6 @@
         android:id="@+id/imageView11"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@android:color/white"
-        android:src="@drawable/shop_info_img_shape"
         app:layout_constraintBottom_toTopOf="@+id/guideline77"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -25,7 +23,6 @@
         android:id="@+id/materialToolbar3"
         android:layout_width="0dp"
         android:layout_height="?actionBarSize"
-        android:background="@color/shop_main_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,15 +53,17 @@
         android:id="@+id/imageView5"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/gold_coin_icons"
+        android:layout_margin="@dimen/_3sdp"
+        android:src="@drawable/gold_coin"
         app:layout_constraintBottom_toBottomOf="@+id/materialCardView"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/materialCardView"
-        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/materialCardView"
         app:layout_constraintTop_toTopOf="@+id/materialCardView" />
 
     <TextView
+        android:id="@+id/textView7"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/fredoka_semibold"
@@ -94,12 +93,12 @@
         android:id="@+id/imageView55"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:padding="@dimen/_5sdp"
+        android:layout_margin="@dimen/_3sdp"
         android:src="@drawable/ic_gem"
         app:layout_constraintBottom_toBottomOf="@+id/materialCardView1"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/materialCardView1"
-        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/materialCardView1"
         app:layout_constraintTop_toTopOf="@+id/materialCardView1" />
 
@@ -127,7 +126,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView11"
-        app:layout_constraintVertical_bias="0.823"
+        app:layout_constraintVertical_bias="0.809"
         app:tabIndicator="@drawable/tab_indicator_shape"
         app:tabIndicatorColor="@android:color/white"
         app:tabIndicatorFullWidth="true"
@@ -168,7 +167,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="@dimen/_160sdp" />
+        app:layout_constraintGuide_begin="@dimen/_180sdp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -71,4 +71,9 @@
     <color name="leaderboard_item_bg_color">#99FFFFFF</color>
 
     <color name="shop_main_color">#3F1585</color>
+    <color name="shop_button_color">#23A347</color>
+    <color name="shop_gold_text_color">#DF5000</color>
+    <color name="shop_gold_stroke_color">#C57600</color>
+    <color name="shop_white_trans_color">#80FFFFFF</color>
+
 </resources>

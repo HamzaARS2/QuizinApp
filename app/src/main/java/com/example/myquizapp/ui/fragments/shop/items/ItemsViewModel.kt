@@ -1,4 +1,4 @@
-package com.example.myquizapp.ui.fragments.shop.viewpager_slides.viewmodels
+package com.example.myquizapp.ui.fragments.shop.items
 
 import androidx.lifecycle.ViewModel
 

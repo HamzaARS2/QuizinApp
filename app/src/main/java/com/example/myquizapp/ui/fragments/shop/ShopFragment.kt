@@ -1,6 +1,5 @@
 package com.example.myquizapp.ui.fragments.shop
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,12 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.myquizapp.R
 import com.example.myquizapp.databinding.FragmentShopBinding
-import com.example.myquizapp.ui.fragments.shop.viewpager_slides.GemsFragment
-import com.example.myquizapp.ui.fragments.shop.viewpager_slides.GoldFragment
-import com.example.myquizapp.ui.fragments.shop.viewpager_slides.ItemsFragment
-import com.example.myquizapp.utils.setViewInsets
+import com.example.myquizapp.ui.fragments.shop.gem_packs.GemsFragment
+import com.example.myquizapp.ui.fragments.shop.gold_packs.GoldFragment
+import com.example.myquizapp.ui.fragments.shop.items.ItemsFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
 class ShopFragment : Fragment() {

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_180sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="@dimen/_16sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shop_gems_item_shape"
+        android:padding="@dimen/_6sdp">
+
+        <ImageView
+            android:id="@+id/shop_gems_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/shop_gems_pack_lvl3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/shop_gems_price_btn"
+            style="@style/shopButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/_3sdp"
+            android:text="14.99$"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="16:5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/shop_gems_image"
+            app:layout_constraintTop_toBottomOf="@+id/cardView7" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:strokeWidth="@dimen/_2sdp"
+            app:strokeColor="#055791"
+            app:cardBackgroundColor="@color/shop_white_trans_color"
+            app:layout_constraintBottom_toTopOf="@+id/shop_gems_price_btn"
+            app:layout_constraintDimensionRatio="16:5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/shop_gems_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <ImageView
+            android:id="@+id/imageView20"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView7"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@+id/cardView7"
+            app:layout_constraintTop_toTopOf="@+id/cardView7"
+            app:srcCompat="@drawable/ic_gem" />
+
+        <TextView
+            android:id="@+id/shop_gems_amount_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="2500"
+            android:gravity="center"
+            android:textColor="#024B80"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView7"
+            app:layout_constraintEnd_toEndOf="@+id/cardView7"
+            app:layout_constraintStart_toEndOf="@+id/imageView20"
+            app:layout_constraintTop_toTopOf="@+id/cardView7" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
