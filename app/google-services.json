@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:22611970901:android:738272750eb6a089d8bddc",
         "android_client_info": {
-          "package_name": "com.example.myquizadmin"
+          "package_name": "com.reddevx.quizin"
         }
       },
       "oauth_client": [
@@ -38,7 +38,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:22611970901:android:76e1dd360498ffead8bddc",
         "android_client_info": {
-          "package_name": "com.example.myquizapp"
+          "package_name": "com.reddevx.quizin"
         }
       },
       "oauth_client": [

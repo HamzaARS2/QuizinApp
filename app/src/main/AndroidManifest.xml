@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.myquizapp">
+    package="com.reddevx.quizin">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.android.vending.BILLING" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,7 +13,7 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.QuizinApp">
         <activity
-            android:name="com.example.myquizapp.ui.MainActivity"
+            android:name="com.reddevx.quizin.ui.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.QuizinApp"
