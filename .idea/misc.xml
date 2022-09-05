@@ -8,13 +8,17 @@
         <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/drawable/shop_info_img_shape.xml" value="0.168" />
         <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/drawable/tab_indicator_shape.xml" value="0.27" />
         <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/drawable/tablayout_shape.xml" value="0.27" />
+        <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/layout/fragment_blank.xml" value="0.1" />
         <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/layout/fragment_category_quizzes.xml" value="0.30055579307396324" />
         <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/layout/fragment_explore.xml" value="0.3009833262077811" />
         <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/layout/fragment_gems.xml" value="0.2890123984608807" />
         <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/layout/fragment_gold.xml" value="0.2890123984608807" />
         <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/layout/fragment_items.xml" value="0.5" />
         <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/layout/fragment_shop.xml" value="0.3009833262077811" />
+        <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/layout/loading_dialog_layout.xml" value="0.3009833262077811" />
+        <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/layout/lottie_dialog.xml" value="0.3009833262077811" />
         <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/layout/settings_fragment.xml" value="0.3009833262077811" />
+        <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/layout/shop_dialog.xml" value="0.30012825994014536" />
         <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/layout/shop_gems_item.xml" value="0.30012825994014536" />
         <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/layout/shop_gold_item.xml" value="0.3009833262077811" />
         <entry key="..\:/Code Canyon/Quizin App WorkSpace/QuizinApp/app/src/main/res/layout/shop_icon_layout.xml" value="0.30055579307396324" />

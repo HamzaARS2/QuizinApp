@@ -99,9 +99,10 @@ class ExploreFragment : Fragment(), View.OnClickListener, CategoriesListener,
             exploreUserCorrectTv.text = user.correct.toString()
             exploreUserTrophies.text = user.trophies.toString()
             exploreUserWrongTv.text = user.wrong.toString()
+            exploreUserGems.text = user.gems.toString()
+            exploreUserGold.text = user.gold.toString()
             Glide.with(requireView()).load(user.avatar).placeholder(R.drawable.avatar_placeholder)
                 .into(binding.exploreUserImage)
-
         }
         loadToolbarData(user)
     }
@@ -111,9 +112,8 @@ class ExploreFragment : Fragment(), View.OnClickListener, CategoriesListener,
         binding.apply {
             exploreToolbarUserName.text = user.username
             exploreToolbarUserBadge.text = "Lv.${user.level}  ${user.badge}"
-//            exploreToolbarUserCorrects.text = getConvertedValue(user.correct)
-//            exploreToolbarUserTrophies.text = getConvertedValue(user.trophies)
-//            exploreToolbarUserWrongs.text = getConvertedValue(user.wrong)
+            exploreToolbarUserGems.text = user.gems.toString()
+            exploreToolbarUserGold.text = user.gold.toString()
             Glide.with(requireView()).load(user.avatar).placeholder(R.drawable.avatar_placeholder)
                 .into(binding.exploreToolbarUserImage)
         }
@@ -213,7 +213,7 @@ class ExploreFragment : Fragment(), View.OnClickListener, CategoriesListener,
             R.id.shop_icon_include -> {
                 Navigation
                     .findNavController(view)
-                    .navigate(ExploreFragmentDirections.exploreToShop())
+                    .navigate(ExploreFragmentDirections.exploreToShop(currentUser))
             }
 
         }

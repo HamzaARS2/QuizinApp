@@ -18,5 +18,6 @@ data class User(
     var correct:Int = 0,
     var wrong:Int = 0,
     var gems:Int = 0,
+    var gold: Int = 100,
     @ServerTimestamp val timestamp:Date? = null,
 ) : Serializable

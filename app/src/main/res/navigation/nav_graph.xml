@@ -188,7 +188,11 @@
         android:id="@+id/shopFragment"
         android:name="com.reddevx.quizin.ui.fragments.shop.ShopFragment"
         android:label="fragment_shop"
-        tools:layout="@layout/fragment_shop" />
+        tools:layout="@layout/fragment_shop" >
+        <argument
+            android:name="userData"
+            app:argType="com.reddevx.quizin.data.models.User" />
+    </fragment>
 
 
 </navigation>

@@ -7,15 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.reddevx.quizin.databinding.FragmentGoldBinding
+import com.reddevx.quizin.ui.fragments.shop.ShopViewModel
+import com.reddevx.quizin.utils.GoldPack
 import com.reddevx.quizin.utils.getGoldPacks
 
-class GoldFragment : Fragment() {
+class GoldFragment : Fragment(), GoldPackAdapter.GoldClickListener {
 
     companion object {
         fun newInstance() = GoldFragment()
     }
 
-    private lateinit var viewModel: GoldViewModel
+    private lateinit var viewModel: ShopViewModel
     private val binding by lazy{FragmentGoldBinding.inflate(layoutInflater)}
     private lateinit var goldAdapter: GoldPackAdapter
 
@@ -23,8 +25,8 @@ class GoldFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewModel = ViewModelProvider(this)[GoldViewModel::class.java]
-        goldAdapter = GoldPackAdapter(getGoldPacks())
+        viewModel = ViewModelProvider(requireActivity())[ShopViewModel::class.java]
+        goldAdapter = GoldPackAdapter(getGoldPacks(),this)
 
 
         return binding.root
@@ -36,6 +38,10 @@ class GoldFragment : Fragment() {
             adapter = goldAdapter
             hasFixedSize()
         }
+    }
+
+    override fun onGoldPackClick(goldPack: GoldPack) {
+        viewModel.postGold(goldPack.goldAmount)
     }
 
 

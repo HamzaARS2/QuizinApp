@@ -63,7 +63,7 @@
         app:layout_constraintTop_toTopOf="@+id/materialCardView" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/shop_gold_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/fredoka_semibold"
@@ -103,7 +103,7 @@
         app:layout_constraintTop_toTopOf="@+id/materialCardView1" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/shop_gems_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/fredoka_semibold"

@@ -52,7 +52,7 @@ class BillingHelper(
     override fun onPurchasesUpdated(result: BillingResult, purchases: MutableList<Purchase>?) {
         // Purchase Complete
         val response = result.responseCode
-        if (response == BillingClient.BillingResponseCode.OK && purchases != null) {
+        if (response == BillingClient.BillingResponseCode.OK && !purchases.isNullOrEmpty()) {
             mListener.onPurchaseComplete()
             for (purchase in purchases) {
                 handlePurchase(purchase)
@@ -93,7 +93,7 @@ class BillingHelper(
             .setProductDetailsParamsList(productDetailsParamsList)
             .build()
 
-        val billingResult = billingClient.launchBillingFlow(activity, billingFlowParams)
+        billingClient.launchBillingFlow(activity, billingFlowParams)
     }
 
     private fun handlePurchase(purchase: Purchase) {
@@ -104,7 +104,6 @@ class BillingHelper(
     }
 
     interface ProductsListener {
-        fun onProductsDetailsResponse(result: BillingResult, products: MutableList<ProductDetails>)
         fun onPurchaseComplete()
         fun onPurchaseConsumed()
     }

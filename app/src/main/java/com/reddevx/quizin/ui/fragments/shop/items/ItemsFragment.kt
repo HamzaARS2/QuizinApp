@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.reddevx.quizin.databinding.FragmentItemsBinding
+import com.reddevx.quizin.ui.fragments.shop.ShopViewModel
 
 class ItemsFragment : Fragment() {
 
@@ -14,7 +15,7 @@ class ItemsFragment : Fragment() {
         fun newInstance() = ItemsFragment()
     }
 
-    private lateinit var viewModel: ItemsViewModel
+    private lateinit var viewModel: ShopViewModel
     private val binding by lazy {FragmentItemsBinding.inflate(layoutInflater)}
     private lateinit var shopItemsAdapter: ShopItemsAdapter
 
@@ -22,7 +23,7 @@ class ItemsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewModel = ViewModelProvider(this)[ItemsViewModel::class.java]
+        viewModel = ViewModelProvider(requireActivity())[ShopViewModel::class.java]
         shopItemsAdapter = ShopItemsAdapter(arrayListOf())
 
         return binding.root

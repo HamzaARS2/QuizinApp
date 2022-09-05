@@ -8,12 +8,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import com.android.billingclient.api.BillingResult
 import com.android.billingclient.api.ProductDetails
 import com.reddevx.quizin.R
 import com.reddevx.quizin.data.models.QuizProduct
+import com.reddevx.quizin.data.models.User
 import com.reddevx.quizin.databinding.FragmentGemsBinding
+import com.reddevx.quizin.listeners.UpdateUserListener
 import com.reddevx.quizin.ui.billing.BillingHelper
+import com.reddevx.quizin.ui.fragments.shop.ShopViewModel
 import com.reddevx.quizin.utils.LoadingDialog
 import com.reddevx.quizin.utils.getProducts
 import kotlinx.coroutines.Dispatchers
@@ -21,13 +25,19 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class GemsFragment : Fragment(), BillingHelper.ProductsListener, GemPackListener {
+class GemsFragment : Fragment(), BillingHelper.ProductsListener, GemPackListener,
+    UpdateUserListener {
 
     companion object {
-        fun newInstance() = GemsFragment()
+        fun newInstance(user: User) =
+            GemsFragment().apply {
+                arguments = Bundle().apply {
+                    putSerializable("currentUser", user)
+                }
+            }
     }
 
-    private lateinit var viewModel: GemsViewModel
+    private lateinit var viewModel: ShopViewModel
     private val binding by lazy { FragmentGemsBinding.inflate(layoutInflater) }
     private lateinit var gemsAdapter: GemPackAdapter
 
@@ -35,11 +45,21 @@ class GemsFragment : Fragment(), BillingHelper.ProductsListener, GemPackListener
 
     private lateinit var loading: LoadingDialog
 
+    private lateinit var currentUser: User
+    private lateinit var product: QuizProduct
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            currentUser = it.getSerializable("currentUser") as User
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewModel = ViewModelProvider(this)[GemsViewModel::class.java]
+        viewModel = ViewModelProvider(requireActivity())[ShopViewModel::class.java]
         billingHelper = BillingHelper(requireActivity(), getProducts(), this)
         gemsAdapter = GemPackAdapter(mListener = this)
 
@@ -75,34 +95,38 @@ class GemsFragment : Fragment(), BillingHelper.ProductsListener, GemPackListener
 
             Log.d("GemsFragment", "onProductsDetailsResponse: gems size = ${gemPacks.size}")
 
-            // Toast.makeText(requireContext(), gemPacks.size, Toast.LENGTH_SHORT).show()
             gemsAdapter.setProducts(gemPacks)
         }
     }
 
     override fun onGemPackClick(product: QuizProduct) {
+        this.product = product
         billingHelper.startPurchase(product.productDetails)
     }
 
-    override fun onProductsDetailsResponse(
-        result: BillingResult,
-        products: MutableList<ProductDetails>
-    ) {
-
-
-
-
-
-    }
 
     override fun onPurchaseComplete() {
         loading.createLoadingDialog()
-        Toast.makeText(requireActivity(), "Purchase Complete", Toast.LENGTH_SHORT).show()
     }
 
     override fun onPurchaseConsumed() {
-        loading.close()
+        currentUser.gems = currentUser.gems + product.gemsAmount
+        viewModel.saveUserData(currentUser,this)
         Log.d("GemsFragment", "onPurchaseConsumed: Product Consumed")
+
+    }
+
+    override fun onUserUpdatedSuccessfully(user: User) {
+        if (context != null)
+        Toast.makeText(context, "You have bought ${product.gemsAmount} Gems", Toast.LENGTH_SHORT).show()
+        loading.close()
+        viewModel.postGems(user.gems)
+    }
+
+    override fun onUpdatingUserFailed(e: Exception) {
+        if (context != null)
+        Toast.makeText(context, "Error : ${e.message}", Toast.LENGTH_SHORT).show()
+        loading.close()
     }
 
 

@@ -73,7 +73,7 @@
                                 android:src="@drawable/gold_coin" />
 
                             <TextView
-                                android:id="@+id/explore_toolbar_user_trophies1"
+                                android:id="@+id/explore_user_gold"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -116,7 +116,7 @@
                                 android:src="@drawable/ic_gem" />
 
                             <TextView
-                                android:id="@+id/explore_toolbar_user_corrects1"
+                                android:id="@+id/explore_user_gems"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -490,7 +490,7 @@
                 android:contentInsetLeft="0dp"
                 android:contentInsetEnd="0dp"
                 android:contentInsetRight="0dp"
-                android:visibility="visible"
+                android:visibility="gone"
                 app:contentInsetEnd="0dp"
                 app:contentInsetLeft="0dp"
                 app:contentInsetRight="0dp"
@@ -620,7 +620,7 @@
                                     android:src="@drawable/gold_coin" />
 
                                 <TextView
-                                    android:id="@+id/explore_toolbar_user_trophies"
+                                    android:id="@+id/explore_toolbar_user_gold"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
@@ -662,7 +662,7 @@
                                     android:src="@drawable/ic_gem" />
 
                                 <TextView
-                                    android:id="@+id/explore_toolbar_user_corrects"
+                                    android:id="@+id/explore_toolbar_user_gems"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
