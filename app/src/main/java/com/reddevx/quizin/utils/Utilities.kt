@@ -1,11 +1,15 @@
 package com.reddevx.quizin.utils
 
+import android.app.AlertDialog
+import android.content.Context
+import android.content.DialogInterface
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import androidx.core.view.*
 import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.QueryProductDetailsParams
+import com.reddevx.quizin.R
 
 
 // Note : This will return 7 questions for every quiz.
@@ -78,6 +82,21 @@ fun getProducts() : MutableList<QueryProductDetailsParams.Product> {
             .setProductType(BillingClient.ProductType.INAPP)
             .build()
     )
+}
+
+
+fun showDialog(cancelable: Boolean, message: String ,context:Context,setPositiveBtn: (dialog: DialogInterface) -> Unit) {
+    val dialog = AlertDialog.Builder(context)
+        .setCancelable(cancelable)
+        .setMessage(message)
+        .setPositiveButton(R.string.yes) { dialog, _ ->
+            setPositiveBtn(dialog)
+        }
+        .setNegativeButton(R.string.no) { dialog, _ ->
+            dialog.dismiss()
+        }
+        .create()
+    dialog.show()
 }
 
 

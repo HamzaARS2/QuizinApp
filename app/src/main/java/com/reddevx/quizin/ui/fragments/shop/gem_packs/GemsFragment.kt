@@ -121,6 +121,7 @@ class GemsFragment : Fragment(), BillingHelper.ProductsListener, GemPackListener
         Toast.makeText(context, "You have bought ${product.gemsAmount} Gems", Toast.LENGTH_SHORT).show()
         loading.close()
         viewModel.postGems(user.gems)
+
     }
 
     override fun onUpdatingUserFailed(e: Exception) {

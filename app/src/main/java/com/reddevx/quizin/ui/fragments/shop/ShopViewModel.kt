@@ -4,12 +4,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.reddevx.quizin.data.models.User
+import com.reddevx.quizin.data.models.UserShopData
 import com.reddevx.quizin.data.repositories.Repository
 import com.reddevx.quizin.listeners.UpdateUserListener
 
 open class ShopViewModel(
     private val repository: Repository = Repository()
 ) : ViewModel() {
+
 
     private val _shopGold:MutableLiveData<Int> = MutableLiveData()
     val shopGold:LiveData<Int> get() = _shopGold

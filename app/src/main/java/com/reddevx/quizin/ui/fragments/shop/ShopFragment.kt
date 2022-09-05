@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
@@ -15,6 +16,9 @@ import com.reddevx.quizin.ui.fragments.shop.gold_packs.GoldFragment
 import com.reddevx.quizin.ui.fragments.shop.items.ItemsFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.reddevx.quizin.data.models.User
+import com.reddevx.quizin.data.models.UserShopData
+import com.reddevx.quizin.listeners.UpdateUserListener
+import com.reddevx.quizin.utils.LoadingDialog
 
 class ShopFragment : Fragment() {
 
@@ -23,6 +27,8 @@ class ShopFragment : Fragment() {
     private val binding by lazy {FragmentShopBinding.inflate(layoutInflater)}
 
     private lateinit var currentUser: User
+    private lateinit var loading:LoadingDialog
+    private lateinit var userShopData: UserShopData
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +40,7 @@ class ShopFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         viewModel = ViewModelProvider(requireActivity())[ShopViewModel::class.java]
+        loading = LoadingDialog(requireContext())
         return binding.root
     }
 
@@ -58,7 +65,9 @@ class ShopFragment : Fragment() {
         viewModel.shopGems.observe(viewLifecycleOwner) {
             binding.shopGemsTv.text = it.toString()
         }
+
     }
+
 
 
 }
@@ -69,7 +78,7 @@ class FragmentAdapter(fragment: Fragment,private val user: User) : FragmentState
     override fun createFragment(position: Int): Fragment {
         return when(position) {
             0 -> ItemsFragment.newInstance()
-            1 -> GoldFragment.newInstance()
+            1 -> GoldFragment.newInstance(user)
             else -> GemsFragment.newInstance(user)
         }
     }

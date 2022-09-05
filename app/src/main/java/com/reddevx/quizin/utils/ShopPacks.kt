@@ -16,8 +16,8 @@ data class GemPack(
 
 fun getGoldPacks(): List<GoldPack> {
     return arrayListOf(
-        GoldPack(600, 10000, R.drawable.shop_coins_pack_lvl2),
         GoldPack(150, 2500, R.drawable.shop_coins_pack_lvl2),
+        GoldPack(600, 10000, R.drawable.shop_coins_pack_lvl2),
         GoldPack(1400, 25000)
     )
 }

@@ -18,6 +18,7 @@ import com.reddevx.quizin.databinding.SettingsFragmentBinding
 import com.reddevx.quizin.listeners.SuccessListener
 import com.reddevx.quizin.listeners.UpdateUserListener
 import com.reddevx.quizin.utils.LoadingDialog
+import com.reddevx.quizin.utils.showDialog
 
 class SettingsFragment : Fragment(), SuccessListener, UpdateUserListener {
 
@@ -73,7 +74,7 @@ class SettingsFragment : Fragment(), SuccessListener, UpdateUserListener {
 
         binding.appSettingsDeleteAccountBtn.setOnClickListener {
             // Deleting User Account!
-            showDialog(true,"Are you sure you want to delete your account ?") {dialog ->
+            showDialog(true,"Are you sure you want to delete your account ?",requireContext()) {dialog ->
                 viewModel.deleteUserAccount(user.id, this)
                 loading.createLoadingDialog()
                 dialog.dismiss()
@@ -87,7 +88,7 @@ class SettingsFragment : Fragment(), SuccessListener, UpdateUserListener {
         }
 
         binding.appSettingsLogOutBtn.setOnClickListener {
-            showDialog(true, "Are you sure you want to sign out ?") { dialog ->
+            showDialog(true, "Are you sure you want to sign out ?",requireContext()) { dialog ->
                 viewModel.signOutCurrentUser()
                 Navigation
                     .findNavController(requireView())
@@ -113,19 +114,7 @@ class SettingsFragment : Fragment(), SuccessListener, UpdateUserListener {
         }
     }
 
-    private fun showDialog(cancelable: Boolean, message: String ,setPositiveBtn: (dialog: DialogInterface) -> Unit) {
-        val dialog = AlertDialog.Builder(requireContext())
-            .setCancelable(cancelable)
-            .setMessage(message)
-            .setPositiveButton(R.string.yes) { dialog, _ ->
-               setPositiveBtn(dialog)
-            }
-            .setNegativeButton(R.string.no) { dialog, _ ->
-                dialog.dismiss()
-            }
-            .create()
-        dialog.show()
-    }
+
 
     override fun onSuccess(any: Any?) {
         // Account Deleted Successfully!
