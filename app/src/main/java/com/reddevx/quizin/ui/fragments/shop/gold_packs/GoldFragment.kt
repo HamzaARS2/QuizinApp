@@ -104,7 +104,7 @@ class GoldFragment : Fragment(), GoldPackAdapter.GoldClickListener, UpdateUserLi
         Toast.makeText(requireContext(), "Error : ${e.message}", Toast.LENGTH_SHORT).show()
     }
 
-    
+
 
 
 }
