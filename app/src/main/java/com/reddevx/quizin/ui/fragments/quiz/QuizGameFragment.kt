@@ -99,7 +99,7 @@ class QuizGameFragment : Fragment(), QuizTimeListener, Animator.AnimatorListener
         viewModel.gameFinished.observe(viewLifecycleOwner) {
             // Listening on game finished to navigate to the results screen
             if (it) {
-                loading.createLoadingDialog()
+                loading.startLoading()
                 val userId = viewModel.getCurrentUser()!!.uid
                 viewModel.getUserData(userId, this)
             }

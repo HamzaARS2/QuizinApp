@@ -61,7 +61,7 @@ class RegisterFragment : Fragment(), View.OnClickListener, UserListener {
 
                 // Registering user
                 viewModel.registerUser(username, email, password, this)
-                loading.createLoadingDialog()
+                loading.startLoading()
 
             }
 

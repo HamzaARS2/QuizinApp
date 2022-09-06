@@ -15,7 +15,7 @@ class LoadingDialog(
     private lateinit var dialog: AlertDialog
 
 
-    fun createLoadingDialog() {
+    fun startLoading() {
         dialog = AlertDialog.Builder(context)
             .setCancelable(false)
             .setView(LayoutInflater.from(context).inflate(R.layout.loading_dialog_layout, null))

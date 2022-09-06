@@ -66,7 +66,7 @@ class LoginFragment : Fragment(), View.OnClickListener, SignInListener, SuccessL
 
                 // login validation succeeded
                 viewModel.signInUser(email, password, this)
-                loading.createLoadingDialog()
+                loading.startLoading()
 
             }
 
@@ -97,7 +97,7 @@ class LoginFragment : Fragment(), View.OnClickListener, SignInListener, SuccessL
         val currentUser = viewModel.getCurrentUser()
         if (currentUser != null) {
             viewModel.getUserData(currentUser.uid, this)
-            loading.createLoadingDialog()
+            loading.startLoading()
         }
     }
 

@@ -127,7 +127,7 @@ class QuizSettingsFragment : Fragment(), QuestionsListener, View.OnClickListener
             R.id.extended_fab_start_quiz -> {
                 val difficulty = viewModel.selectedDifficulty
                 viewModel.getQuestionsByDifficulty(categoryId, quizId, difficulty, this)
-                loading.createLoadingDialog()
+                loading.startLoading()
             }
         }
     }

@@ -1,7 +1,5 @@
 package com.reddevx.quizin.ui.fragments.app_settings
 
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -69,14 +67,14 @@ class SettingsFragment : Fragment(), SuccessListener, UpdateUserListener {
             // Valid User Info .. Updating User Data
             saveUserInfo(updatedUsername, updatedEmail)
             viewModel.updateUser(user, this)
-            loading.createLoadingDialog()
+            loading.startLoading()
         }
 
         binding.appSettingsDeleteAccountBtn.setOnClickListener {
             // Deleting User Account!
             showDialog(true,"Are you sure you want to delete your account ?",requireContext()) {dialog ->
                 viewModel.deleteUserAccount(user.id, this)
-                loading.createLoadingDialog()
+                loading.startLoading()
                 dialog.dismiss()
             }
         }

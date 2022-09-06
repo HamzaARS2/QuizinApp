@@ -8,9 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.activityViewModels
-import com.android.billingclient.api.BillingResult
-import com.android.billingclient.api.ProductDetails
 import com.reddevx.quizin.R
 import com.reddevx.quizin.data.models.QuizProduct
 import com.reddevx.quizin.data.models.User
@@ -20,10 +17,6 @@ import com.reddevx.quizin.ui.billing.BillingHelper
 import com.reddevx.quizin.ui.fragments.shop.ShopViewModel
 import com.reddevx.quizin.utils.LoadingDialog
 import com.reddevx.quizin.utils.getProducts
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class GemsFragment : Fragment(), BillingHelper.ProductsListener, GemPackListener,
     UpdateUserListener {
@@ -77,7 +70,6 @@ class GemsFragment : Fragment(), BillingHelper.ProductsListener, GemPackListener
         }
 
         billingHelper.productDetails.observe(viewLifecycleOwner) { productsDetails ->
-            Log.d("GemsFragment", "onProductsDetailsResponse:size is ${productsDetails.size}")
             val gemPacks: ArrayList<QuizProduct> = arrayListOf()
             for (product in productsDetails) {
                 when (product.productId) {
@@ -88,14 +80,14 @@ class GemsFragment : Fragment(), BillingHelper.ProductsListener, GemPackListener
                         gemPacks.add(QuizProduct(product, 1000, R.drawable.shop_gems_pack_lvl2))
                     }
                     else -> {
+                        // gems_pack_lvl3
                         gemPacks.add(QuizProduct(product, 1500, R.drawable.shop_gems_pack_lvl3))
                     }
                 }
             }
-
-            Log.d("GemsFragment", "onProductsDetailsResponse: gems size = ${gemPacks.size}")
-
             gemsAdapter.setProducts(gemPacks)
+            // Hide Progress
+            binding.shopGemsProgress.visibility = View.GONE
         }
     }
 
@@ -106,7 +98,7 @@ class GemsFragment : Fragment(), BillingHelper.ProductsListener, GemPackListener
 
 
     override fun onPurchaseComplete() {
-        loading.createLoadingDialog()
+        loading.startLoading()
     }
 
     override fun onPurchaseConsumed() {

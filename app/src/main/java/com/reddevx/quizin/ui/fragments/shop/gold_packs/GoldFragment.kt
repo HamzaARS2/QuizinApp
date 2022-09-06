@@ -1,5 +1,6 @@
 package com.reddevx.quizin.ui.fragments.shop.gold_packs
 
+import android.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.reddevx.quizin.R
 import com.reddevx.quizin.data.models.User
 import com.reddevx.quizin.databinding.FragmentGoldBinding
 import com.reddevx.quizin.listeners.UpdateUserListener
@@ -64,27 +66,45 @@ class GoldFragment : Fragment(), GoldPackAdapter.GoldClickListener, UpdateUserLi
     }
 
     override fun onGoldPackClick(goldPack: GoldPack) {
-        showDialog(true,"Are you sure you want to buy this pack ?",requireContext()) {
+        showDialog(true,"Are you sure you want to buy this pack ?",requireContext()) { dialog ->
             this.goldPack = goldPack
-            currentUser.gold = currentUser.gold + goldPack.goldAmount
-            viewModel.saveUserData(currentUser,this)
-            it.dismiss()
-            loading.createLoadingDialog()
-        }
+            if (viewModel.hasEnoughGems(currentUser,goldPack.goldPrice)) {
+                // User has enough gems to buy
+                viewModel.buyGoldPack(currentUser,goldPack,this)
+                // Start loading
+                loading.startLoading()
+            }else {
+                // User doesn't have enough gems to buy
+                val failedDialog = AlertDialog.Builder(context)
+                    .setCancelable(true)
+                    .setMessage("Sorry, you don't have enough gems to buy this pack")
+                    .setPositiveButton(R.string.close) { dialogInterface, _ ->
+                        dialogInterface.dismiss()
+                    }
+                    .create()
+                failedDialog.show()
 
+            }
+            dialog.dismiss()
+        }
     }
 
     override fun onUserUpdatedSuccessfully(user: User) {
         if (context != null)
             Toast.makeText(context, "You have bought ${goldPack.goldAmount} Gold", Toast.LENGTH_SHORT).show()
         loading.close()
-        viewModel.postGold(user.gold)
+        viewModel.apply {
+            postGold(user.gold)
+            postGems(user.gems)
+        }
     }
 
     override fun onUpdatingUserFailed(e: Exception) {
         loading.close()
         Toast.makeText(requireContext(), "Error : ${e.message}", Toast.LENGTH_SHORT).show()
     }
+
+    
 
 
 }
