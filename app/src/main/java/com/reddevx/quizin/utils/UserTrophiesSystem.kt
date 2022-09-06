@@ -30,7 +30,7 @@ class UserTrophiesSystem(
         return totalCollectedTrophies
     }
 
-    fun calculateTrophiesByDifficulty(): Int = when (quizDifficulty) {
+    private fun calculateTrophiesByDifficulty(): Int = when (quizDifficulty) {
         EASY_QUIZ_DIFFICULTY -> 2
         NORMAL_QUIZ_DIFFICULTY -> 4
         // Hard difficulty
@@ -38,7 +38,7 @@ class UserTrophiesSystem(
     }
 
 
-    fun calculateRemainingTimeBonus(): Int {
+    private fun calculateRemainingTimeBonus(): Int {
         val percentage = (elapsedTime / questionMaxTime.toFloat()) * 100
         return when {
             percentage >= 67 -> 3
@@ -48,7 +48,7 @@ class UserTrophiesSystem(
     }
 
 
-    fun calculateQuestionTimeBonus(): Int = when (questionMaxTime) {
+    private fun calculateQuestionTimeBonus(): Int = when (questionMaxTime) {
         LONG_QUESTION_TIME -> 2
         NORMAL_QUESTION_TIME -> 4
         else -> 7

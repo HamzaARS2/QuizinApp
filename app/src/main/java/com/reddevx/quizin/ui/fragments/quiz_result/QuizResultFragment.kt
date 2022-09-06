@@ -70,7 +70,7 @@ class QuizResultFragment : Fragment(), Animator.AnimatorListener, View.OnClickLi
             quizResultCorrectAnswersTv.text = userQuizInfo.corrects.toString()
             quizResultWrongAnswersTv.text = userQuizInfo.wrongs.toString()
             quizResultUserCollectedExpTv.text = "+${userQuizInfo.exp}"
-
+            quizResultGoldTv.text = userQuizInfo.collectedGold.toString()
             quizResultUserLevelTv.text = "Level ${user.level}"
             quizResultUserExpTv.text = "Exp ${user.exp}/${user.level.times(1000)}"
 

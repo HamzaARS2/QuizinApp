@@ -12,6 +12,7 @@ import com.reddevx.quizin.data.repositories.Repository
 import com.reddevx.quizin.listeners.SuccessListener
 import com.reddevx.quizin.listeners.UpdateUserListener
 import com.reddevx.quizin.utils.UserExperienceSystem
+import com.reddevx.quizin.utils.UserGoldCollector
 import com.reddevx.quizin.utils.UserTrophiesSystem
 
 class QuizGameViewModel(
@@ -28,6 +29,7 @@ class QuizGameViewModel(
 
     var collectedExp = 0
     var levelUp = false
+    var collectedGold = 0
 
 
     // Current Question
@@ -59,6 +61,7 @@ class QuizGameViewModel(
         nextRound = 0
         questionsMax = 0
         collectedExp = 0
+        collectedGold = 0
         levelUp = false
         checkedAnswer = ""
         _correctAnswers.postValue(0)
@@ -167,13 +170,22 @@ class QuizGameViewModel(
         val userExpSystem = UserExperienceSystem(user)
         val pair = userExpSystem.getUpdatedUserExperience(collectedTrophies)
         val updatedUser = pair.first
-        collectedExp = pair.second
+        this.collectedExp = pair.second
+        this.collectedGold = collectUserGold(
+            user,
+            questions[0].difficulty,
+            collectedTrophies,
+            correctAnswers,
+            wrongAnswers,
+            questionTime
+        )
         levelUp = userExpSystem.levelUp
         // Saving collected experience
         updatedUser.apply {
             correct = user.correct + correctAnswers
             wrong = user.wrong + wrongAnswers
             trophies = user.trophies + collectedTrophies
+            gold += collectedGold
         }
         return updatedUser
     }
@@ -185,10 +197,24 @@ class QuizGameViewModel(
         correctAnswers.value!!,
         wrongAnswers.value!!,
         collectedExp,
+        collectedGold,
         levelUp,
         questionTime,
         questionsMax
     )
+
+    private fun collectUserGold(
+        user: User,
+        difficulty: String,
+        trophies: Int,
+        corrects: Int,
+        wrongs: Int,
+        questionMaxTime: Int
+    ): Int {
+        val userGoldCollector =
+            UserGoldCollector(user, difficulty, trophies, corrects, wrongs, questionMaxTime)
+        return userGoldCollector.getCollectedGold()
+    }
 
 
 }

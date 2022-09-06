@@ -8,7 +8,8 @@ data class UserQuizInfo(
     val corrects:Int = 0,
     val wrongs:Int = 0,
     val exp:Int = 0,
+    val collectedGold:Int = 0,
     val levelUp:Boolean = false,
-    val questionMaxTime:Int = 0,
+    val questionTime:Int = 0,
     val maxQuestions:Int = 0
 ) : Serializable

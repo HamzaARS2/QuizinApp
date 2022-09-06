@@ -57,7 +57,7 @@ class QuizOverAll(
         else -> 7
     }
 
-    private fun getQuestionTimeTrophies(): Int = when (userQuizInfo.questionMaxTime) {
+    private fun getQuestionTimeTrophies(): Int = when (userQuizInfo.questionTime) {
         LONG_QUESTION_TIME -> 2
         NORMAL_QUESTION_TIME -> 4
         else -> 7
