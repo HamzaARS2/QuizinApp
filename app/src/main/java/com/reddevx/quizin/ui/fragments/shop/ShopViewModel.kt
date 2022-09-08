@@ -3,6 +3,7 @@ package com.reddevx.quizin.ui.fragments.shop
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.reddevx.quizin.data.models.ShopItem
 import com.reddevx.quizin.data.models.User
 import com.reddevx.quizin.data.models.UserShopData
 import com.reddevx.quizin.data.repositories.Repository
@@ -37,9 +38,24 @@ open class ShopViewModel(
         return true
     }
 
+    fun hasEnoughGold(user: User,goldAmount: Int) : Boolean {
+        if (user.gold < goldAmount)
+            return false
+        return true
+    }
+
     fun buyGoldPack(user: User,goldPack: GoldPack, mListener: UpdateUserListener)  {
         user.gold += goldPack.goldAmount
         user.gems -= goldPack.goldPrice
         saveUserData(user,mListener)
+    }
+
+    fun buyShopItem(user: User,item: ShopItem,mListener: UpdateUserListener) : Boolean {
+        if (user.inventory.allItems.size > 10)
+            return true
+        user.inventory.allItems.add(item)
+        user.gold -= item.price
+        saveUserData(user,mListener)
+        return false
     }
 }

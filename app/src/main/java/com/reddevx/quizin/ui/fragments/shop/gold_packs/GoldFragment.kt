@@ -13,10 +13,7 @@ import com.reddevx.quizin.data.models.User
 import com.reddevx.quizin.databinding.FragmentGoldBinding
 import com.reddevx.quizin.listeners.UpdateUserListener
 import com.reddevx.quizin.ui.fragments.shop.ShopViewModel
-import com.reddevx.quizin.utils.GoldPack
-import com.reddevx.quizin.utils.LoadingDialog
-import com.reddevx.quizin.utils.getGoldPacks
-import com.reddevx.quizin.utils.showDialog
+import com.reddevx.quizin.utils.*
 
 class GoldFragment : Fragment(), GoldPackAdapter.GoldClickListener, UpdateUserListener {
 
@@ -75,14 +72,7 @@ class GoldFragment : Fragment(), GoldPackAdapter.GoldClickListener, UpdateUserLi
                 loading.startLoading()
             }else {
                 // User doesn't have enough gems to buy
-                val failedDialog = AlertDialog.Builder(context)
-                    .setCancelable(true)
-                    .setMessage("Sorry, you don't have enough gems to buy this pack")
-                    .setPositiveButton(R.string.close) { dialogInterface, _ ->
-                        dialogInterface.dismiss()
-                    }
-                    .create()
-                failedDialog.show()
+                showPopup("Sorry, you don't have enough gems to buy this pack",true,requireContext())
 
             }
             dialog.dismiss()

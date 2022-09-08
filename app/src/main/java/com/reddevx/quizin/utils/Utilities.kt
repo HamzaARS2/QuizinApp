@@ -100,6 +100,17 @@ fun showDialog(cancelable: Boolean, message: String ,context:Context,setPositive
     dialog.show()
 }
 
+fun showPopup(message: String,cancelable: Boolean,context: Context) {
+    val failedDialog = AlertDialog.Builder(context)
+        .setCancelable(cancelable)
+        .setMessage(message)
+        .setPositiveButton(R.string.close) { dialogInterface, _ ->
+            dialogInterface.dismiss()
+        }
+        .create()
+    failedDialog.show()
+}
+
 
 
 

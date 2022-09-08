@@ -83,7 +83,7 @@ class FragmentAdapter(fragment: Fragment,private val user: User) : FragmentState
 
     override fun createFragment(position: Int): Fragment {
         return when(position) {
-            0 -> ItemsFragment.newInstance()
+            0 -> ItemsFragment.newInstance(user)
             1 -> GoldFragment.newInstance(user)
             else -> GemsFragment.newInstance(user)
         }

@@ -16,32 +16,51 @@ import androidx.appcompat.app.AlertDialog
 import com.reddevx.quizin.R
 import com.reddevx.quizin.data.getShopItems
 import com.reddevx.quizin.data.models.ShopItem
+import com.reddevx.quizin.data.models.User
 import com.reddevx.quizin.databinding.FragmentItemsBinding
+import com.reddevx.quizin.listeners.UpdateUserListener
 import com.reddevx.quizin.ui.fragments.shop.ShopViewModel
+import com.reddevx.quizin.utils.LoadingDialog
 import com.reddevx.quizin.utils.showDialog
+import com.reddevx.quizin.utils.showPopup
 
-class ItemsFragment : Fragment(), ItemListener {
+class ItemsFragment : Fragment(), ItemListener, UpdateUserListener {
 
     companion object {
-        fun newInstance() = ItemsFragment()
+        fun newInstance(user: User) = ItemsFragment().apply {
+            arguments = Bundle().apply {
+                putSerializable("currentUser",user)
+            }
+        }
     }
 
     private lateinit var viewModel: ShopViewModel
     private val binding by lazy {FragmentItemsBinding.inflate(layoutInflater)}
     private lateinit var shopItemsAdapter: ShopItemsAdapter
+    private lateinit var currentUser: User
 
+    private lateinit var loading:LoadingDialog
+    private var boughtItem: ShopItem? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            currentUser = it.getSerializable("currentUser") as User
+        }
+        loading = LoadingDialog(requireContext())
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         viewModel = ViewModelProvider(requireActivity())[ShopViewModel::class.java]
         shopItemsAdapter = ShopItemsAdapter(getShopItems(),this)
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.shopItemsRv.apply {
             adapter = shopItemsAdapter
             hasFixedSize()
@@ -54,9 +73,24 @@ class ItemsFragment : Fragment(), ItemListener {
 
     override fun onBuyButtonClick(item: ShopItem) {
         showDialog(true,"Are you sure you want to buy this item ?",requireContext()) {
-            Toast.makeText(requireContext(), "You have bought ${item.name} item for ${item.price}", Toast.LENGTH_SHORT).show()
-            it.dismiss()
+            if (viewModel.hasEnoughGold(currentUser,item.price)) {
+                loading.startLoading()
+                boughtItem = item
+                buyItem(item)
+                it.dismiss()
+            }else {
+                showPopup("Sorry, you don't have enough gold to buy this item",true,requireContext())
+            }
         }
+    }
+
+    private fun buyItem(item: ShopItem) {
+        val isFullInventory = viewModel.buyShopItem(currentUser,item,this)
+        if (isFullInventory) {
+            showPopup("Your inventory is full", true, requireContext())
+            loading.close()
+        }
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -76,6 +110,23 @@ class ItemsFragment : Fragment(), ItemListener {
             dialog.dismiss()
         }
 
+    }
+
+    override fun onUserUpdatedSuccessfully(user: User) {
+        loading.close()
+        viewModel.postGold(user.gold)
+        if (boughtItem != null) {
+            Toast.makeText(
+                requireContext(),
+                "You have bought ${boughtItem!!.name} item for ${boughtItem!!.price} Gold",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+    override fun onUpdatingUserFailed(e: Exception) {
+        loading.close()
+        Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
     }
 
 
