@@ -1,5 +1,6 @@
 package com.reddevx.quizin.ui.fragments.shop.items
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.lifecycle.ViewModelProvider
@@ -9,8 +10,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.reddevx.quizin.R
+import com.reddevx.quizin.data.getShopItems
+import com.reddevx.quizin.data.models.ShopItem
 import com.reddevx.quizin.databinding.FragmentItemsBinding
 import com.reddevx.quizin.ui.fragments.shop.ShopViewModel
 import com.reddevx.quizin.utils.showDialog
@@ -30,7 +35,7 @@ class ItemsFragment : Fragment(), ItemListener {
         savedInstanceState: Bundle?
     ): View {
         viewModel = ViewModelProvider(requireActivity())[ShopViewModel::class.java]
-        shopItemsAdapter = ShopItemsAdapter(arrayListOf("1","2","3","4"),this)
+        shopItemsAdapter = ShopItemsAdapter(getShopItems(),this)
 
         return binding.root
     }
@@ -43,13 +48,25 @@ class ItemsFragment : Fragment(), ItemListener {
         }
     }
 
-    override fun onQuestionMarkClick(item: String) {
-        showItemInfo()
+    override fun onQuestionMarkClick(item: ShopItem) {
+        showItemInfo(item)
     }
 
-    private fun showItemInfo() {
+    override fun onBuyButtonClick(item: ShopItem) {
+        showDialog(true,"Are you sure you want to buy this item ?",requireContext()) {
+            Toast.makeText(requireContext(), "You have bought ${item.name} item for ${item.price}", Toast.LENGTH_SHORT).show()
+            it.dismiss()
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun showItemInfo(item: ShopItem) {
         val view = LayoutInflater.from(requireContext()).inflate(R.layout.shop_item_explanation_dialog,binding.root,false)
         val closeBtn: Button = view.findViewById(R.id.shop_item_explanation_close_btn)
+        val itemInfoTv: TextView = view.findViewById(R.id.shop_item_explanation_body_tv)
+        val itemNameTv: TextView = view.findViewById(R.id.shop_item_explanation_name_tv)
+        itemNameTv.text = "${item.name} info :"
+        itemInfoTv.text = item.description
         val dialog = AlertDialog.Builder(requireContext())
             .setView(view)
             .create()

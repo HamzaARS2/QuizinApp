@@ -14,11 +14,11 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView16"
+            android:id="@+id/shop_item_image"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:src="@drawable/quiz_item_tr"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintBottom_toTopOf="@+id/shop_item_buy_btn"
             app:layout_constraintDimensionRatio="3:2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -27,7 +27,7 @@
             app:layout_constraintVertical_chainStyle="spread_inside" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/shop_item_buy_btn"
             style="@style/shopButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+            app:layout_constraintTop_toBottomOf="@+id/shop_item_image" />
 
 
         <com.google.android.material.card.MaterialCardView
@@ -55,7 +55,7 @@
             android:foreground="?attr/selectableItemBackground"
             android:clickable="true"
             android:focusable="true"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView16"
+            app:layout_constraintBottom_toBottomOf="@+id/shop_item_image"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.923"
