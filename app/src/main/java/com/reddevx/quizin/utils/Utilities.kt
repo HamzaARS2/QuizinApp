@@ -89,6 +89,7 @@ fun showDialog(cancelable: Boolean, message: String ,context:Context,setPositive
     val dialog = AlertDialog.Builder(context)
         .setCancelable(cancelable)
         .setMessage(message)
+        .setTitle("Item Info")
         .setPositiveButton(R.string.yes) { dialog, _ ->
             setPositiveBtn(dialog)
         }

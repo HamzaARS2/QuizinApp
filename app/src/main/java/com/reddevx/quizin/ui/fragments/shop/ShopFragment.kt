@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.reddevx.quizin.databinding.FragmentShopBinding
@@ -46,6 +47,11 @@ class ShopFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.shopToolbar.setNavigationOnClickListener {
+            Navigation
+                .findNavController(it)
+                .popBackStack()
+        }
         binding.shopViewpager.adapter = FragmentAdapter(this,currentUser)
         viewModel.apply {
             postGold(currentUser.gold)

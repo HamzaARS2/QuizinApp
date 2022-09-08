@@ -67,5 +67,12 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="itemInfoButtonStyle" parent="Widget.Material3.Button" >
+        <item name="fontFamily">@font/fredoka_semibold</item>
+        <item name="backgroundTint">@color/shop_main_color</item>
+        <item name="cornerRadius">@dimen/_10sdp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 
 </resources>
