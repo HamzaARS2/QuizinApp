@@ -20,4 +20,4 @@ Quizin App is a quiz application developed for Android devices using Kotlin. It 
 [Quizin App on Google Play Store](https://bit.ly/3Kp6Pb2)
 
 **Feedback:**
-Your feedback is invaluable! If you have any suggestions or encounter any issues, please feel free to [contact us](mailto:quizinapp@example.com).
+Your feedback is invaluable! If you have any suggestions or encounter any issues, please feel free to [contact us](mailto:quizintm@gmail.com).
